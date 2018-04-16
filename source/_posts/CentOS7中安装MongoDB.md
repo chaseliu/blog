@@ -50,6 +50,8 @@ gpgkey=https://www.mongodb.org/static/pgp/server-3.6.asc
 yum install -y mongodb-org
 ```
 
+<!– more –>
+
 ## 关闭SELinux
 
 之前在Azure的Ubuntu的服务器上好像没有遇到过这个问题。公司里的CentOS7镜像默认是 `enforcing` 模式。

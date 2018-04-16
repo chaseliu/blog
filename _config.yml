@@ -121,6 +121,8 @@ theme_config:
   friends: false
   toc_hide_index: true
   avatar: /assets/img/avatar.jpg
+  favicon: /favicon.ico
   reward_wording: Winner winner, chicken dinner
-  show_all_link: Read all..
+  show_all_link: 阅读全文
   reward_type: 1
+  open_in_new: true
