@@ -1,0 +1,42 @@
+---
+title: "{ C & L }"
+date: 2018-04-11 16:24:59
+reward: false
+---
+
+<!-- 😍😘😻💋👄💑👩‍❤️‍👩👨‍❤️‍👨💏👩‍❤️‍💋‍👩👨‍❤️‍💋‍💒❤️🧡💛💚💙💜💕💞💓💗💖💘💝 -->
+
+<head>
+<link rel="stylesheet" href="https://cdn.bootcss.com/flipclock/0.7.8/flipclock.css">
+<link rel="stylesheet" href="/assets/css/clock.css">
+<style type="text/css">
+    div.bg {
+        background-color: #ffdcdf;
+        padding: 100px 0px;
+        border-radius: 2%;
+        text-align: center;
+    }
+    </style>
+</head>
+
+<div class="bg">
+    <img src="https://precisecare.blob.core.chinacloudapi.cn/static/octocats-v3.png" style="text-align:center;width:300px;margin:5%"></img>
+    <p>Yuanyuan and Eleven have known each other for</p>
+    <div id="known-clock" class="clock"></div>
+    <div style="height: 30px;"></div>
+    <p>Wedding Countdown</p>
+    <div id="wedding-clock" class="clock"></div>
+</div>
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.slim.min.js"></script>
+<script src="https://cdn.bootcss.com/flipclock/0.7.8/flipclock.min.js"></script>
+<script>
+var start = new Date('2016-02-17T11:00:00Z');
+var knownClock = $('#known-clock').FlipClock((Date.now() - start) / 1000, {
+  clockFace: 'DailyCounter',
+});
+var weddingDate = new Date('2018-09-16T10:08:00Z')
+var weddingClock = $('#wedding-clock').FlipClock((weddingDate - Date.now()) / 1000, {
+  clockFace: 'DailyCounter',
+  countdown: true,
+});
+</script>
