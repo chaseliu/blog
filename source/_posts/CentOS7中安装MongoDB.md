@@ -50,7 +50,7 @@ gpgkey=https://www.mongodb.org/static/pgp/server-3.6.asc
 yum install -y mongodb-org
 ```
 
-<!– more –>
+<!-- more -->
 
 ## 关闭SELinux
 
