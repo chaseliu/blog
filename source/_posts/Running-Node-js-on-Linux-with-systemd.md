@@ -19,6 +19,8 @@ However, I’m a firm believer in using the Linux init system for process monito
 
 Please note that I’ve no intention of casting aspersions on any of the tools I’ve mentioned. But I think gaining familiarity with Linux is important for Node.js developers; it’s important to use standard tools that are well-proven and widely understood by sysadmins everywhere.
 
+<!-- more -->
+
 ## A Note about PM2
 
 I will be making reference to PM2 because it has become ubiquitous in the Node.js community, and therefore it will serve as most people’s frame of reference. PM2 makes it very easy to do:

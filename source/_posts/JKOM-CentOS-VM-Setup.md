@@ -19,6 +19,8 @@ Here are the technical requirements:
 - python 3.6
 - node 8.9.3
 
+<!-- more -->
+
 ## Basics
 
 ```bash

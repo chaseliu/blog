@@ -10,6 +10,8 @@ reward: true
 
 This article describes basic usage of linux iptables.
 
+<!-- more -->
+
 ## Sources
 
 1. [CentOS HowTos][1]
