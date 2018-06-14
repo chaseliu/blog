@@ -77,9 +77,13 @@ theme: yilia
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type: git
+- type: git
   repo: git@github.com:chaseliu/chaseliu.github.io.git
   branch: master
+- type: rsync
+  host: 118.184.216.251
+  user: root
+  root: /root/www/blog
 
 jsonContent:
   meta: false
