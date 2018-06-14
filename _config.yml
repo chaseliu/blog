@@ -5,9 +5,9 @@
 # Site
 title: Pragmatic Idealist
 subtitle: Pragmatic Idealist
-description:
+description: To see a world in a grain of sand<br>and a heaven in a wild flower<br>Hold infinity in the palm of your hand<br>and eternity in an hour
 author: Chase Liu
-language: cn
+language: zh-Hans
 timezone: Asia/Shanghai
 
 # URL
@@ -72,7 +72,7 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: yilia
+theme: next
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
@@ -104,29 +104,40 @@ jsonContent:
     categories: false
     tags: true
 
-## Theme Config
+# Local search plugin
+search:
+  path: search.xml
+  field: post
+  format: html
+  limit: 10000
+
+# NexT theme config
 theme_config:
-
+  social:
+    GitHub: https://github.com/chaseliu || github
+    Instagram: https://instagram.com/hlycsl || instagram
+  social_icons:
+    enable: true
+    icons_only: false
+    transition: true
+  footer:
+    powered:
+      enable: false
+      version: false
+  # favicon:
+  #   small: /images/favicon-16x16-next.png
+  #   medium: /images/favicon-32x32-next.png
+  #   apple_touch_icon: /images/apple-touch-icon-next.png
+  #   safari_pinned_tab: /images/logo.svg
   menu:
-    Home: /
-    "{ C & L }": /cnl
-    Archives: /archives
-    Photos: /photos
-    About: /about
-
-  subnav:
-    github: "https://github.com/chaseliu"
-    weibo: "https://www.instagram.com/hlycsl/"
-
-  smart_menu: false
-
-  aboutme: 很惭愧<br><br>就做了一点微小的工作<br>谢谢大家
-
-  friends: false
-  toc_hide_index: true
-  avatar: /assets/img/avatar.jpg
-  favicon: /favicon.ico
-  reward_wording: Winner winner, chicken dinner
-  show_all_link: 阅读全文
-  reward_type: 1
-  open_in_new: true
+    home: / || home
+    about: /about/ || user
+    '{ C & L }': /cnl/ || heart
+    tags: /tags/ || tags
+    archives: /archives/ || archive
+  avatar:
+    url: assets/img/avatar.jpg
+    rounded: true
+    opacity: 1
+  pace: false
+  pace_theme: pace-theme-loading-bar

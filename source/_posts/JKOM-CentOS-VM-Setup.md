@@ -5,8 +5,6 @@ tags:
   - centos
   - sysadmin
   - jkom
-toc: true
-reward: true
 ---
 
 This article describes the steps of initiating a CentOS VM normally used with JKOM's private network.

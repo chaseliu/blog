@@ -1,42 +1,119 @@
 ---
 title: "{ C & L }"
 date: 2018-04-11 16:24:59
-reward: false
 ---
 
 <!-- 😍😘😻💋👄💑👩‍❤️‍👩👨‍❤️‍👨💏👩‍❤️‍💋‍👩👨‍❤️‍💋‍💒❤️🧡💛💚💙💜💕💞💓💗💖💘💝 -->
 
 <head>
-<link rel="stylesheet" href="https://cdn.bootcss.com/flipclock/0.7.8/flipclock.css">
-<link rel="stylesheet" href="/assets/css/clock.css">
 <style type="text/css">
-    div.bg {
-        background-color: #ffdcdf;
-        padding: 100px 0px;
-        border-radius: 2%;
-        text-align: center;
-    }
-    </style>
+  div.bg {
+    background-color: #eae7d9;
+    padding: 150px 0px;
+    border-radius: 4px;
+    text-align: center;
+  }
+  table, td, tr {
+    border: 0px;
+    border-collapse: collapse;
+    text-align: center;
+  }
+  table.clock {
+    margin: auto;
+    max-width: 450px;
+    border-radius: 4px;
+    background-color: #dea897;
+  }
+  table.clock tr.clock-digits {
+    line-height: 4.5em;
+    background-color: #dea897;
+    color: #397360;
+  }
+  table.clock tr.clock-head td {
+    font-size: 0.618em;
+    padding: 2px;
+    color: #eae7d9;
+    background-color: #9d414f;
+  }
+  table.clock tr.clock-digits td:nth-child(odd) {
+    font-size: 4em;
+    padding: 0px;
+  }
+  table.clock tr.clock-digits td:nth-child(even) {
+    font-size: 2em;
+    padding: 0px;
+  }
+</style>
 </head>
 
 <div class="bg">
-    <img src="https://precisecare.blob.core.chinacloudapi.cn/static/octocats-v3.png" style="text-align:center;width:300px;margin:5%"></img>
+    <img src="https://precisecare.blob.core.chinacloudapi.cn/static/octocats-v3.png" style="max-width:300px;border:0px;"></img>
     <p>I See You</p>
-    <div id="known-clock" class="clock"></div>
-    <div style="height: 30px;"></div>
-    <p>Wedding Countdown</p>
-    <div id="wedding-clock" class="clock"></div>
+    <table id="known-clock" class="clock">
+      <tr class="clock-head">
+        <td>DAYS</td>
+        <td></td>
+        <td>HOURS</td>
+        <td></td>
+        <td>MINUTES</td>
+        <td></td>
+        <td>SECONDS</td>
+      </tr>
+      <tr class="clock-digits">
+        <td class="clock-days">800</td>
+        <td>:</td>
+        <td class="clock-hours">22</td>
+        <td>:</td>
+        <td class="clock-minutes">11</td>
+        <td>:</td>
+        <td class="clock-seconds">09</td>
+      </tr>
+    </table>
+    <p style="margin-top: 50px;">Wedding Countdown</p>
+    <table id="wedding-clock" class="clock">
+      <tr class="clock-head">
+        <td>DAYS</td>
+        <td></td>
+        <td>HOURS</td>
+        <td></td>
+        <td>MINUTES</td>
+        <td></td>
+        <td>SECONDS</td>
+      </tr>
+      <tr class="clock-digits">
+        <td class="clock-days">800</td>
+        <td>:</td>
+        <td class="clock-hours">22</td>
+        <td>:</td>
+        <td class="clock-minutes">11</td>
+        <td>:</td>
+        <td class="clock-seconds">09</td>
+      </tr>
+    </table>
 </div>
 <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.slim.min.js"></script>
-<script src="https://cdn.bootcss.com/flipclock/0.7.8/flipclock.min.js"></script>
 <script>
-var start = new Date('2016-02-17T11:00:00Z');
-var knownClock = $('#known-clock').FlipClock((Date.now() - start) / 1000, {
-  clockFace: 'DailyCounter',
-});
-var weddingDate = new Date('2018-09-16T10:08:00Z')
-var weddingClock = $('#wedding-clock').FlipClock((weddingDate - Date.now()) / 1000, {
-  clockFace: 'DailyCounter',
-  countdown: true,
-});
+
+function clock(dom, ts, countdown) {
+  return setInterval(function() {
+    var diff = countdown ? ts - Date.now() : Date.now() - ts;
+    var days = hours = minutes = seconds = 0;
+    if (diff > 0) {
+      days = parseInt(diff / 1000 / 60 / 60 / 24);
+      hours = parseInt(diff / 1000 / 60 / 60 % 24);
+      minutes = parseInt(diff / 1000 / 60 % 60);
+      seconds = parseInt(diff / 1000 % 60);
+    }
+    $(dom + ' .clock-days').text(days < 10 ? '0' + days : days);
+    $(dom + ' .clock-hours').text(hours < 10 ? '0' + hours : hours);
+    $(dom + ' .clock-minutes').text(minutes < 10 ? '0' + minutes : minutes);
+    $(dom + ' .clock-seconds').text(seconds < 10 ? '0' + seconds : seconds);
+  }, 1000);
+};
+
+var knownTs = new Date('2016-02-17T11:00:00Z');
+var weddingTs = new Date('2018-09-16T10:08:00Z');
+clock('#known-clock', knownTs);
+clock('#wedding-clock', weddingTs, true);
+
 </script>

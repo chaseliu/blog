@@ -5,8 +5,6 @@ tags:
   - database
   - sysadmin
   - mongodb
-toc: true
-reward: true
 ---
 
 本文概述了自己在CentOS7操作系统的服务器上安装配置MongoDB的一些基本步骤，供读者参考。

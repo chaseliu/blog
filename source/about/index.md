@@ -3,8 +3,6 @@ title: About Me
 date: 2018-04-11 16:24:59
 ---
 
-<img style="width:30%; min-width:200px" src="/assets/img/octocats-v3.png"></img>
-
 I am a pragmatic idealist with passion in IT, photography, travel and teaching how to code.
 
 ## Working Experience

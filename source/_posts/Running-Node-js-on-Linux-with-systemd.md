@@ -5,7 +5,6 @@ tags:
   - deployment
   - sysadmin
   - nodejs
-toc: true
 ---
 
 今天在思考如何在Linux服务器上不依赖`PM2`部署直接部署Python Web服务时，碰巧搜到的这片文章。作为一片入门教程，作者给出了非常明确的思路和操作示例，并在字里行间和文末明列出了推荐阅读材料。为推荐给各位阅读，这里我做了全文的复制，[原文链接](https://blog.codeship.com/running-node-js-linux-systemd/)。

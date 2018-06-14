@@ -4,8 +4,6 @@ date: 2018-04-11 15:46:04
 tags:
   - sysadmin
   - iptables
-toc: true
-reward: true
 ---
 
 This article describes basic usage of linux iptables.
