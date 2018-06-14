@@ -3,7 +3,8 @@ title: JKOM CentOS VM Setup
 date: 2018-04-11 15:45:54
 tags:
   - centos
-  - vm
+  - sysadmin
+  - jkom
 toc: true
 reward: true
 ---

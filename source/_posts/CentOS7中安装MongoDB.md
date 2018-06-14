@@ -2,7 +2,8 @@
 title: CentOS7中安装MongoDB
 date: 2018-04-16 15:04:13
 tags:
-  - linux
+  - database
+  - sysadmin
   - mongodb
 toc: true
 reward: true

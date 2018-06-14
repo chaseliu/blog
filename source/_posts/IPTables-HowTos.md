@@ -2,7 +2,7 @@
 title: IPTables HowTos
 date: 2018-04-11 15:46:04
 tags:
-  - linux
+  - sysadmin
   - iptables
 toc: true
 reward: true
