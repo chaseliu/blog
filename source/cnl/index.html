@@ -7,47 +7,66 @@ date: 2018-04-11 16:24:59
 
 <head>
 <style type="text/css">
+  p {
+    color: #7d8877;
+    margin: 40px 0px 10px 0px;
+  }
+  img {
+    max-width: 300px;
+    border: 0px !important;
+  }
   div.bg {
     background-color: #eae7d9;
-    padding: 150px 0px;
-    border-radius: 4px;
+    padding: 100px 20px;
+    border-radius: 8px;
     text-align: center;
   }
-  table, td, tr {
+  table.clock, td, tr {
     border: 0px;
     border-collapse: collapse;
     text-align: center;
   }
   table.clock {
     margin: auto;
-    max-width: 450px;
-    border-radius: 4px;
-    background-color: #dea897;
+    max-width: 400px;
+    background-color: #e9e6d8;
   }
   table.clock tr.clock-digits {
     line-height: 4.5em;
-    background-color: #dea897;
-    color: #397360;
+    background-color: #f7ead1;
+    color: #7d8877;
   }
   table.clock tr.clock-head td {
     font-size: 0.618em;
     padding: 2px;
-    color: #eae7d9;
-    background-color: #9d414f;
+    color: #f7ead1;
+    background-color: #dca997;
   }
-  table.clock tr.clock-digits td:nth-child(odd) {
-    font-size: 4em;
-    padding: 0px;
+  tr.clock-digits td:nth-child(odd) {
+    font-size: 3em;
+    padding: 5px 0px;
   }
-  table.clock tr.clock-digits td:nth-child(even) {
+  tr.clock-digits td:nth-child(even) {
     font-size: 2em;
     padding: 0px;
+  }
+  tr.clock-digits td:first-child {
+    border-bottom-left-radius: 8px;
+  }
+  tr.clock-digits td:last-child {
+    border-bottom-right-radius: 8px;
+  }
+  tr.clock-head td:first-child {
+    border-top-left-radius: 8px;
+  }
+  tr.clock-head td:last-child {
+    border-top-right-radius: 8px;
   }
 </style>
 </head>
 
 <div class="bg">
-    <img src="https://precisecare.blob.core.chinacloudapi.cn/static/octocats-v3.png" style="max-width:300px;border:0px;"></img>
+    <img src="https://precisecare.blob.core.chinacloudapi.cn/static/octocats-v3.png"></img>
     <p>I See You</p>
     <table id="known-clock" class="clock">
       <tr class="clock-head">
@@ -69,7 +88,28 @@ date: 2018-04-11 16:24:59
         <td class="clock-seconds">09</td>
       </tr>
     </table>
-    <p style="margin-top: 50px;">Wedding Countdown</p>
+    <p>Get Married</p>
+    <table id="married-clock" class="clock">
+      <tr class="clock-head">
+        <td>DAYS</td>
+        <td></td>
+        <td>HOURS</td>
+        <td></td>
+        <td>MINUTES</td>
+        <td></td>
+        <td>SECONDS</td>
+      </tr>
+      <tr class="clock-digits">
+        <td class="clock-days">800</td>
+        <td>:</td>
+        <td class="clock-hours">22</td>
+        <td>:</td>
+        <td class="clock-minutes">11</td>
+        <td>:</td>
+        <td class="clock-seconds">09</td>
+      </tr>
+    </table>
+    <p>Wedding Countdown</p>
     <table id="wedding-clock" class="clock">
       <tr class="clock-head">
         <td>DAYS</td>
@@ -112,8 +152,10 @@ function clock(dom, ts, countdown) {
 };
 
 var knownTs = new Date('2016-02-17T11:00:00Z');
+var marriedTs = new Date('2018-06-11T06:00:00Z');
 var weddingTs = new Date('2018-09-16T10:08:00Z');
 clock('#known-clock', knownTs);
+clock('#married-clock', marriedTs);
 clock('#wedding-clock', weddingTs, true);
 
 </script>
