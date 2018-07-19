@@ -88,27 +88,6 @@ date: 2018-04-11 16:24:59
         <td class="clock-seconds">09</td>
       </tr>
     </table>
-    <p>Get Married</p>
-    <table id="married-clock" class="clock">
-      <tr class="clock-head">
-        <td>DAYS</td>
-        <td></td>
-        <td>HOURS</td>
-        <td></td>
-        <td>MINUTES</td>
-        <td></td>
-        <td>SECONDS</td>
-      </tr>
-      <tr class="clock-digits">
-        <td class="clock-days">800</td>
-        <td>:</td>
-        <td class="clock-hours">22</td>
-        <td>:</td>
-        <td class="clock-minutes">11</td>
-        <td>:</td>
-        <td class="clock-seconds">09</td>
-      </tr>
-    </table>
     <p>Wedding Countdown</p>
     <table id="wedding-clock" class="clock">
       <tr class="clock-head">
@@ -152,10 +131,10 @@ function clock(dom, ts, countdown) {
 };
 
 var knownTs = new Date('2016-02-17T11:00:00Z');
-var marriedTs = new Date('2018-06-11T06:00:00Z');
+// var marriedTs = new Date('2018-06-11T06:00:00Z');
 var weddingTs = new Date('2018-09-16T10:08:00Z');
 clock('#known-clock', knownTs);
-clock('#married-clock', marriedTs);
+// clock('#married-clock', marriedTs);
 clock('#wedding-clock', weddingTs, true);
 
 </script>
