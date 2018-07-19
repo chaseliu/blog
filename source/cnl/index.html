@@ -1,23 +1,43 @@
 ---
-title: "{ C & L }"
+title: "{ L & C }"
 date: 2018-04-11 16:24:59
+layout: false
 ---
-
 <!-- 😍😘😻💋👄💑👩‍❤️‍👩👨‍❤️‍👨💏👩‍❤️‍💋‍👩👨‍❤️‍💋‍💒❤️🧡💛💚💙💜💕💞💓💗💖💘💝 -->
-
 <head>
+<title>{ L & C }</title>
+<meta charset="UTF-8">
+<meta name="description" content="刘驰与陈易依的主页">
+<meta name="author" content="Chase Liu">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png?v=6.3.0">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32x32.png?v=6.3.0">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16x16.png?v=6.3.0">
 <style type="text/css">
   p {
     color: #7d8877;
     margin: 40px 0px 10px 0px;
+    font-family: American Typewriter, Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  }
+  p.trans {
+    font-size: 0.618em;
+    margin: -0.618em 0px 10px;
+  }
+  div.title {
+    color: #7d8877;
+    font-size: 2em;
+    margin: 40px 0px 40px 0px;
+    font-family: American Typewriter, Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   }
   img {
-    max-width: 300px;
-    border: 0px !important;
+    width: 90%;
+    max-width: 400px;
+    border: 0px;
   }
   div.bg {
     background-color: #eae7d9;
-    padding: 100px 20px;
+    margin: 2% 2% 2% 2%;
+    padding: 10% 1% 30%;
     border-radius: 8px;
     text-align: center;
   }
@@ -28,19 +48,22 @@ date: 2018-04-11 16:24:59
   }
   table.clock {
     margin: auto;
-    max-width: 400px;
+    width: 90%;
+    max-width: 500px;
     background-color: #e9e6d8;
   }
   table.clock tr.clock-digits {
     line-height: 4.5em;
     background-color: #f7ead1;
     color: #7d8877;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   }
   table.clock tr.clock-head td {
     font-size: 0.618em;
     padding: 2px;
     color: #f7ead1;
     background-color: #dca997;
+    font-family: American Typewriter, Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   }
   tr.clock-digits td:nth-child(odd) {
     font-size: 3em;
@@ -66,8 +89,11 @@ date: 2018-04-11 16:24:59
 </head>
 
 <div class="bg">
+    <div class="title">{ L & C }</div>
+    <!-- <p class="trans" style="margin-top: -4.5em;">刘&nbsp&nbsp驰&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp陈易依</p> -->
     <img src="/assets/img/octocats-v3.png"></img>
     <p>I See You</p>
+    <p class="trans">相遇 · 相识</p>
     <table id="known-clock" class="clock">
       <tr class="clock-head">
         <td>DAYS</td>
@@ -79,16 +105,17 @@ date: 2018-04-11 16:24:59
         <td>SECONDS</td>
       </tr>
       <tr class="clock-digits">
-        <td class="clock-days">800</td>
+        <td class="clock-days"></td>
         <td>:</td>
-        <td class="clock-hours">22</td>
+        <td class="clock-hours"></td>
         <td>:</td>
-        <td class="clock-minutes">11</td>
+        <td class="clock-minutes"></td>
         <td>:</td>
-        <td class="clock-seconds">09</td>
+        <td class="clock-seconds"></td>
       </tr>
     </table>
     <p>Wedding Countdown</p>
+    <p class="trans">婚礼倒计时</p>
     <table id="wedding-clock" class="clock">
       <tr class="clock-head">
         <td>DAYS</td>
@@ -100,13 +127,13 @@ date: 2018-04-11 16:24:59
         <td>SECONDS</td>
       </tr>
       <tr class="clock-digits">
-        <td class="clock-days">800</td>
+        <td class="clock-days"></td>
         <td>:</td>
-        <td class="clock-hours">22</td>
+        <td class="clock-hours"></td>
         <td>:</td>
-        <td class="clock-minutes">11</td>
+        <td class="clock-minutes"></td>
         <td>:</td>
-        <td class="clock-seconds">09</td>
+        <td class="clock-seconds"></td>
       </tr>
     </table>
 </div>
@@ -114,7 +141,7 @@ date: 2018-04-11 16:24:59
 <script>
 
 function clock(dom, ts, countdown) {
-  return setInterval(function() {
+  function refresh() {
     var diff = countdown ? ts - Date.now() : Date.now() - ts;
     var days = hours = minutes = seconds = 0;
     if (diff > 0) {
@@ -127,7 +154,9 @@ function clock(dom, ts, countdown) {
     $(dom + ' .clock-hours').text(hours < 10 ? '0' + hours : hours);
     $(dom + ' .clock-minutes').text(minutes < 10 ? '0' + minutes : minutes);
     $(dom + ' .clock-seconds').text(seconds < 10 ? '0' + seconds : seconds);
-  }, 1000);
+  }
+  refresh();
+  return setInterval(refresh, 1000);
 };
 
 var knownTs = new Date('2016-02-17T11:00:00Z');

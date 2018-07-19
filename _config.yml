@@ -131,7 +131,7 @@ theme_config:
   menu:
     home: / || home
     about: /about/ || user
-    '{ C & L }': /cnl/ || heart
+    '{ L & C }': /cnl/ || heart
     tags: /tags/ || tags
     archives: /archives/ || archive
   avatar:
