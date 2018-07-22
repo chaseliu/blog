@@ -36,7 +36,7 @@ layout: false
   }
   div.bg {
     background-color: #eae7d9;
-    margin: 2% 2% 2% 2%;
+    margin: 2% 1% 2% 1%;
     padding: 10% 1% 30%;
     border-radius: 8px;
     text-align: center;
@@ -141,8 +141,13 @@ layout: false
 <script>
 
 function clock(dom, ts, countdown) {
+  var daysDom = $(dom + ' .clock-days');
+  var hoursDom = $(dom + ' .clock-hours');
+  var minutesDom = $(dom + ' .clock-minutes');
+  var secondsDom = $(dom + ' .clock-seconds');
   function refresh() {
-    var diff = countdown ? ts - Date.now() : Date.now() - ts;
+    // var now = Date.now();
+    var diff = countdown ? ts - Date.now() : now - Date.now();
     var days = hours = minutes = seconds = 0;
     if (diff > 0) {
       days = parseInt(diff / 1000 / 60 / 60 / 24);
@@ -150,20 +155,18 @@ function clock(dom, ts, countdown) {
       minutes = parseInt(diff / 1000 / 60 % 60);
       seconds = parseInt(diff / 1000 % 60);
     }
-    $(dom + ' .clock-days').text(days < 10 ? '0' + days : days);
-    $(dom + ' .clock-hours').text(hours < 10 ? '0' + hours : hours);
-    $(dom + ' .clock-minutes').text(minutes < 10 ? '0' + minutes : minutes);
-    $(dom + ' .clock-seconds').text(seconds < 10 ? '0' + seconds : seconds);
+    daysDom.text(days < 10 ? '0' + days : days);
+    hoursDom.text(hours < 10 ? '0' + hours : hours);
+    minutesDom.text(minutes < 10 ? '0' + minutes : minutes);
+    secondsDom.text(seconds < 10 ? '0' + seconds : seconds);
   }
   refresh();
   return setInterval(refresh, 1000);
 };
 
 var knownTs = new Date('2016-02-17T11:00:00Z');
-// var marriedTs = new Date('2018-06-11T06:00:00Z');
 var weddingTs = new Date('2018-09-16T10:08:00Z');
 clock('#known-clock', knownTs);
-// clock('#married-clock', marriedTs);
 clock('#wedding-clock', weddingTs, true);
 
 </script>
