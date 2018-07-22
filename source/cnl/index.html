@@ -147,7 +147,7 @@ function clock(dom, ts, countdown) {
   var secondsDom = $(dom + ' .clock-seconds');
   function refresh() {
     // var now = Date.now();
-    var diff = countdown ? ts - Date.now() : now - Date.now();
+    var diff = countdown ? ts - Date.now() : Date.now() - ts;
     var days = hours = minutes = seconds = 0;
     if (diff > 0) {
       days = parseInt(diff / 1000 / 60 / 60 / 24);
