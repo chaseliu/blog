@@ -5,127 +5,25 @@ layout: false
 ---
 <!-- 😍😘😻💋👄💑👩‍❤️‍👩👨‍❤️‍👨💏👩‍❤️‍💋‍👩👨‍❤️‍💋‍💒❤️🧡💛💚💙💜💕💞💓💗💖💘💝 -->
 <head>
-<title>{ L & C }</title>
-<meta charset="UTF-8">
-<meta name="description" content="刘驰与陈易依的主页">
-<meta name="author" content="Chase Liu">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
-<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png?v=6.3.0">
-<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32x32.png?v=6.3.0">
-<link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16x16.png?v=6.3.0">
-<style type="text/css">
-  body {
-    color: #7d8877;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    flex-flow: column;
-    background-color: #eae7d9;
-    font-family: American Typewriter, Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  }
-  .trans {
-    font-size: 0.8rem;
-  }
-  .title {
-    font-size: 2em;
-  }
-  img {
-    display: block;
-    width: 90%;
-    max-width: 400px;
-  }
-  .clock {
-    width: 90%;
-    max-width: 500px;
-    border-radius: 0.312rem;
-    overflow: hidden;
-    display: flex;
-  }
-  .head {
-    color: #f7ead1;
-    background-color: #dca997;
-    font-size: 0.618rem;
-    line-height: 2;
-  }
-  .digits {
-    font-size: 2.5rem;
-    line-height: 2;
-    background-color: #f7ead1;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  }
-  .col {
-    text-align: center;
-  }
-  .col:nth-child(odd) {
-    flex: 1;
-  }
-</style>
+  <title>{ L & C }</title>
+  <meta charset="UTF-8">
+  <meta name="description" content="刘驰与陈易依的主页">
+  <meta name="author" content="Chase Liu">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png?v=6.3.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32x32.png?v=6.3.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16x16.png?v=6.3.0">
+  <link href="/assets/css/cnl.v1.css" rel="stylesheet">
 </head>
 
 <body>
   <div class="title">{ L & C }</div>
-  <!-- <p class="trans" style="margin-top: -4.5em;">刘&nbsp&nbsp驰&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp陈易依</p> -->
   <img src="https://jkom-prc-public.oss-cn-shanghai.aliyuncs.com/jrisk/images/octocats-v3.png"></img>
   <div class="main">I See You</div>
-  <div class="trans">相遇 · 相识</div>
-  <div id="known-clock" class="clock">
-    <div class="col">
-      <div class="head">DAYS</div>
-      <div class="digits clock-days"></div>
-    </div>
-    <div class="col">
-      <div class="head">&nbsp;</div>
-      <div class="digits">:</div>
-    </div>
-    <div class="col">
-      <div class="head">HOURS</div>
-      <div class="digits clock-hours"></div>
-    </div>
-    <div class="col">
-      <div class="head">&nbsp;</div>
-      <div class="digits">:</div>
-    </div>
-    <div class="col">
-      <div class="head">MINUTES</div>
-      <div class="digits clock-minutes">:</div>
-    </div>
-    <div class="col">
-      <div class="head">&nbsp;</div>
-      <div class="digits">:</div>
-    </div>
-    <div class="col">
-      <div class="head">SECONDS</div>
-      <div class="digits clock-seconds"></div>
-    </div>
-  </div>
-  <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.slim.min.js"></script>
+  <div class="sub">相遇 · 相识</div>
+  <div id="known-clock" class="clock"></div>
+  <script type="text/javascript" src="/assets/js/cnl.v1.js"></script>
   <script>
-    function clock(dom, ts, coundivown) {
-      var daysDom = $(dom + ' .clock-days');
-      var hoursDom = $(dom + ' .clock-hours');
-      var minutesDom = $(dom + ' .clock-minutes');
-      var secondsDom = $(dom + ' .clock-seconds');
-      function refresh() {
-        // var now = Date.now();
-        var diff = coundivown ? ts - Date.now() : Date.now() - ts;
-        var days = hours = minutes = seconds = 0;
-        if (diff > 0) {
-          days = parseInt(diff / 1000 / 60 / 60 / 24);
-          hours = parseInt(diff / 1000 / 60 / 60 % 24);
-          minutes = parseInt(diff / 1000 / 60 % 60);
-          seconds = parseInt(diff / 1000 % 60);
-        }
-        daysDom.text(days < 10 ? '0' + days : days);
-        hoursDom.text(hours < 10 ? '0' + hours : hours);
-        minutesDom.text(minutes < 10 ? '0' + minutes : minutes);
-        secondsDom.text(seconds < 10 ? '0' + seconds : seconds);
-      }
-      refresh();
-      return setInterval(refresh, 1000);
-    };
-    var knownTs = new Date('2016-02-17T11:00:00Z');
-    // var weddingTs = new Date('2018-09-16T10:08:00Z');
-    clock('#known-clock', knownTs);
-    // clock('#wedding-clock', weddingTs, true);
+    clock('#known-clock', new Date('2016-02-17T11:00:00Z'))
   </script>
 </body>
